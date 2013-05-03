@@ -1,0 +1,7 @@
+---
+---
+[
+{% for post in site.posts reversed %}
+  "{{ post.url }}"{% if post != site.posts.first %},{% endif %}
+{% endfor %}
+]

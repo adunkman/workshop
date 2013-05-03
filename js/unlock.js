@@ -1,6 +1,4 @@
 (function () {
-  var hostname = window.location.protocol + "//" + window.location.host;
-
   var socket = io.connect();
 
   socket.on("connect", function () {
@@ -88,7 +86,7 @@
     e.preventDefault();
 
     var thisPage = window.location.pathname;
-    var url = "http://nodelabs.herokuapp.com/" + encodeURIComponent($.cookie("username")) + thisPage;
+    var url = "/unlock/" + encodeURIComponent($.cookie("username")) + thisPage;
 
     $.ajax(url, { dataType: "jsonp" });
   };

@@ -88,7 +88,7 @@
     var thisPage = window.location.pathname;
     var url = "/unlock/" + encodeURIComponent($.cookie("username")) + thisPage;
 
-    $.ajax(url, { dataType: "jsonp" });
+    $.get(url);
   };
 
   var injectYourUsername = function (index, element) {

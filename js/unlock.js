@@ -1,7 +1,7 @@
 (function () {
+  var hostname = window.location.protocol + "//" + window.location.host;
 
-  var socket = io.connect('http://nodelabs.herokuapp.com:80');
-  //var socket = io.connect('http://localhost:3000');
+  var socket = io.connect();
 
   socket.on("connect", function () {
     var username = whoami();
@@ -89,7 +89,7 @@
 
     var thisPage = window.location.pathname;
     var url = "http://nodelabs.herokuapp.com/" + encodeURIComponent($.cookie("username")) + thisPage;
-    
+
     $.ajax(url, { dataType: "jsonp" });
   };
 
